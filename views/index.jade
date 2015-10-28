@@ -1,12 +1,23 @@
 extends layout
 
 block content
-  h1 Account Verification with Node.js and Express
+  h1 SMS Notifications
 
   p.
-    This demo application will show you how to implement user account
-    verification with Twilio-powered <a href="http://www.authy.com">Authy</a>
-    in Node.js, using the Express web framework.
+    Use this form to send MMS notifications to any subscribers.
 
-  p
-    a(href='/users/new') Sign up for an account to see how it works!
+  form(action='/message/send', method='POST')
+
+    // The text of the message to send
+    .form-group
+      label(for='message') Enter a message
+      input.form-control(type='text', name='message',
+        placeholder='Hi there, gorgeous ;)')
+
+    // An optional image URL
+    .form-group
+      label(for='imageUrl') (Optional) Image URL to send in an MMS
+      input.form-control(type='text', name='imageUrl',
+        placeholder='http://fake.twilio.com/some_image.png')
+
+    button.btn.btn-primary(type='submit') Send Yourself a Message!
