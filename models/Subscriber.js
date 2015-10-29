@@ -9,7 +9,7 @@ var SubscriberSchema = new mongoose.Schema({
     phone: String,
     subscribed: {
         type: Boolean,
-        default: false
+        default: true
     }
 });
 

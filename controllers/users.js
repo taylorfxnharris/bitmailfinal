@@ -9,7 +9,7 @@ exports.showCreate = function(request, response) {
     });
 };
 
-// create a new user based on the form submission
+// create a new user based on z form submission
 exports.create = function(request, response) {
     var params = request.body;
     
