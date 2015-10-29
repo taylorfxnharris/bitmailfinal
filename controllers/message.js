@@ -24,8 +24,7 @@ exports.webhook = function(request, response) {
                     return respond('We couldn\'t sign you up - try again.');
 
                 // We're signed up but not subscribed - prompt to subscribe
-                respond('Thanks for contacting us! Text "subscribe" to ' +
-                    + 'receive updates via text message.');
+                respond('Thanks for contacting us! Text "subscribe" to ' +18189606245 + 'receive updates via text message.');
             });
         } else {
             // For an existing user, process any input message they sent and
