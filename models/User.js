@@ -39,6 +39,23 @@ var UserSchema = new mongoose.Schema({
     }
 });
 
+var SubscriberSchema = new mongoose.Schema({
+    phone: String,
+    subscribed: {
+        type: Boolean,
+        default: true
+    },
+    fullName: {
+        type: String,
+        required: true
+    },
+    phone: {
+        type: String,
+        required: true
+    }
+});
+
+
 // Middleware executed before save - hash the user's password
 UserSchema.pre('save', function(next) {
     var self = this;
@@ -119,6 +136,7 @@ UserSchema.methods.sendMessage = function(message, cb) {
         cb.call(self, err);
     });
 };
+
 
 // Export user model
 module.exports = mongoose.model('User', UserSchema);

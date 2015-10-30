@@ -1,4 +1,5 @@
 var User = require('../models/User');
+var Subscriber = require('../models/Subscriber');
 
 // Display a form that allows users to sign up for a new account
 exports.showCreate = function(request, response) {
@@ -12,8 +13,12 @@ exports.showCreate = function(request, response) {
 // create a new user based on z form submission
 exports.create = function(request, response) {
     var params = request.body;
+    var phone = request.body.From;
     
     // Create a new user based on form parameters
+    
+
+
     var user = new User({
         fullName: params.fullName,
         email: params.email,
@@ -21,6 +26,25 @@ exports.create = function(request, response) {
         countryCode: params.countryCode,
         password: params.password
     });
+
+    if (new User){
+        var newSubscriber = new Subscriber({
+                phone: phone,
+                fullName: params.fullName,
+                phone: params.phone,
+            });
+        newSubscriber.save({
+            phone: phone
+        }); 
+     function saveSubscriber(subscriber){
+        subscriber.subscribed(phone); 
+    subscriber.save();  
+     }   
+    };
+
+var newSubscriber = new Subscriber({
+                phone: params.phone
+            });
 
     user.save(function(err, doc) {
         if (err) {

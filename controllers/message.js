@@ -29,12 +29,12 @@ exports.webhook = function(request, response) {
         } else {
             // For an existing user, process any input message they sent and
             // send back an appropriate message
-            processMessage(sub);
+            sendMessage(sub);
         }
     });
 
     // Process any message the user sent to us
-    function processMessage(subscriber) {
+    function sendMessage(subscriber) {
         // get the text message command sent by the user
         var msg = request.body.Body || '';
         msg = msg.toLowerCase().trim();
@@ -51,11 +51,10 @@ exports.webhook = function(request, response) {
                         + 'again.');
 
                 // Otherwise, our subscription has been updated
-                var responseMessage = 'You are now subscribed for updates.';
+                var sendMessage = 'You are now subscribed for updates.';
                 if (!subscriber.subscribed)
                     responseMessage = 'You have unsubscribed. Text "subscribe"'
                         + ' to start receiving updates again.';
-
                 respond(responseMessage);
             });
         } else {
