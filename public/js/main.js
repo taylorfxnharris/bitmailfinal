@@ -4,3 +4,10 @@ $(document).ready(function() {
         $(this).parent().fadeOut();
     });
 });
+
+
+var $input = $('.form-fieldset > input');
+
+$input.blur(function (e) {
+  $(this).toggleClass('filled', !!$(this).val());
+});

@@ -15,18 +15,6 @@
   </head>
   <body>
     <!-- Bootstrap-powered nav bar-->
-    <nav class="navbar navbar-default navbar-fixed-top navy">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><i class="fa fa-bars"></i></button><a href="/" class="navbar-brand">Bitmail</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="/users/new">Sign Up</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
     <div id="main" class="container">
       <!-- Display any error or informational messages-->
       <div class="message-list">
@@ -35,28 +23,29 @@
       <h2>Create a new account</h2>
     
       <form class="form" action="/users" method="POST">
-        <div class="form-group form-fieldset ui-input __first">
+
+        <fieldset class="form-group form-fieldset ui-input __first">
           <label for="fullName">Username:</label>
           <input type="text" name="fullName" tabindex="0" class="form-control">
-        </div>
-        <div class="form-group form-group form-fieldset ui-input __second">
+        </fieldset>
+        <fieldset class="form-group form-group form-fieldset ui-input __second">
           <label for="email">Your E-Mail Address:</label>
           <input type="email" name="email" tabindex="0" class="form-control">
-        </div>
-        <div class="form-group form-group form-fieldset ui-input __third">
+        </fieldset>
+        <fieldset class="form-group form-group form-fieldset ui-input __third">
           <label for="password">Password:</label>
           <input type="password" name="password" tabindex="0" class="form-control">
-        </div>
-        <div class="form-group form-group form-fieldset ui-input __fourth">
+        </fieldset>
+        <fieldset class="form-group form-group form-fieldset ui-input __fourth">
           <label for="countryCode">Country Code:</label>
           <select id="authy-countries" name="countryCode"></select>
-        </div>
-        <div class="form-group form-group form-fieldset ui-input __fifth">
+        </fieldset>
+        <fieldset class="form-group form-group form-fieldset ui-input __fifth">
           <label for="phone">Mobile Phone:</label>
           <input type="text" name="phone" class="form-control">
-        </div>
+        </fieldset>
         <div class="form-footer">
-        <button type="submit" class="btn btn-primary">Create Account</button>
+        <button type="submit" class="btn btn-default">Subscribe</button>
         </div>
       </form>
     </div>

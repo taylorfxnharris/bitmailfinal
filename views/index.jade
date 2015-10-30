@@ -1,38 +1,48 @@
-extends layout
-
-block content
-  h1 Send a Message
-
-  p.
-    Use this form to send MMS notifications to any subscribers.
-
-  form(action='/message/send', method='POST')
-
-    // The text of the message to send
-    .form-group
-      label(for='message') Enter a message
-      input.form-control(type='text', name='message',
-        placeholder='Hi there, gorgeous ;)')
-
-    // An optional image URL
-    .form-group
-      label(for='imageUrl') (Optional) Image URL to send in an MMS
-      input.form-control(type='text', name='imageUrl',
-        placeholder='http://fake.twilio.com/some_image.png')
-
-    button.btn.btn-primary(type='submit') Send Yourself a Message!
-
-  br
-  hr
-  br
-
-  h2 Add a Subscriber
-
-  form(action='/message', method='POST')
-
-    // The text of the message to send
-    .form-group
-      label(for='message') Enter phone number
-      input.form-control(type='phone', name='From')
-
-    button.btn.btn-primary(type='submit') Subscribe!
+doctype html
+html(lang='en')
+  head
+    // Include Font Awesome Icons
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
+    // Twitter Bootstrap included for some basic styling
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css')
+    // HTML 5 shims for older IE
+    //if lt IE 9
+      script(src='//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
+    // Page styles
+    link(rel='stylesheet', href='/css/main.css')
+    link(rel='stylesheet', media='screen', href='//www.authy.com/form.authy.min.css')
+  body
+   
+    #main.container
+      // Display any error or informational messages
+      .message-list
+      h1 Bitmail
+      h2 Create a new account
+      form.form(action='/users', method='POST')
+        .form-group.form-fieldset.ui-input.__first
+          label(for='fullName') Username:
+          input.form-control(type='text', name='fullName', tabindex='0')
+        .form-group.form-group.form-fieldset.ui-input.__second
+          label(for='email') Your E-Mail Address:
+          input.form-control(type='email', name='email', tabindex='0')
+        .form-group.form-group.form-fieldset.ui-input.__third
+          label(for='password') Password:
+          input.form-control(type='password', name='password', tabindex='0')
+        .form-group.form-group.form-fieldset.ui-input.__fourth
+          label(for='countryCode') Country Code:
+          select#authy-countries(name='countryCode')
+        .form-group.form-group.form-fieldset.ui-input.__fifth
+          label(for='phone') Mobile Phone:
+          input.form-control(type='text', name='phone')
+        .form-footer
+          button.btn.btn-primary(type='submit') Create Account
+    // Include jQuery and Bootstrap scripts
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+    // Include page scripts
+    script(src='/js/main.js')
+    // Include Authy form helpers and additional helper script
+    script(src='//www.authy.com/form.authy.min.js')
+    script(src='/js/create_form.js')

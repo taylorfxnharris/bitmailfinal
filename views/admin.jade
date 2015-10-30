@@ -1,1 +1,36 @@
-admin.jade
+
+block content
+head
+    // Include Font Awesome Icons
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
+    // Twitter Bootstrap included for some basic styling
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css')
+    // HTML 5 shims for older IE
+    //if lt IE 9
+      script(src='//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
+    // Page styles
+    link(rel='stylesheet', href='/css/main.css')
+    link(rel='stylesheet', media='screen', href='//www.authy.com/form.authy.min.css')
+  body
+
+
+#main.container
+ h1 Blast Message
+
+ form(action='/message/send', method='POST')
+
+   // The text of the message to send
+   .form-group
+     label(for='message') Enter message
+     input.form-control(type='text', name='message',
+       placeholder='Hi there, gorgeous ;)')
+
+   // An optional image URL
+   .form-group
+     label(for='imageUrl') Send URL
+     input.form-control(type='text', name='imageUrl',
+       placeholder='http://fake.twilio.com/some_image.png')
+
+   button.btn-sm.btn-primary(type='submit') Send Yourself a Message!

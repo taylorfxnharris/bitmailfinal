@@ -1,22 +1,41 @@
-extends ../layout
-
-block styles
-  link(rel='stylesheet', href='/css/verify.css')
-
-block content
-  h1 Just To Be Safe...
-  p.
-    Your account has been created, but we need to make sure you're a human
-    in control of the phone number you gave us. Can you please enter the 
-    verification code we just sent to your phone?
+doctype html
+html(lang='en')
+  head
+    // Include Font Awesome Icons
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
+    // Twitter Bootstrap included for some basic styling
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css')
+    // HTML 5 shims for older IE
+    //if lt IE 9
+      script(src='//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
+    // Page styles
+    link(rel='stylesheet', href='/css/main.css')
+    link(rel='stylesheet', href='/css/verify.css')
+  body
+    
+    #main.container
+      // Display any error or informational messages
+      .message-list
+      h2 Enter Verification Code
+      br     
 
   form(action='/users/'+id+'/verify', method='POST')
-    .form-group
-      label(for='code') Verification Code:
-      input.form-control(type='text', name='code')
+   .form-group.form.form-fieldset.ui-input
+     label(for='code') Verification Code:
+     input.form-control(type='text', name='code')
 
-    button.btn.btn-primary(type='submit') Verify Token
+   button.btn.btn-success(type='submit') Verify Token
 
-  form(action='/users/'+id+'/resend', method='POST')
-    .form-group
-      button.btn.btn-link(type='submit') Resend My Code
+ form(action='/users/'+id+'/resend', method='POST')
+   .form-group.form.form-fieldset.ui-input
+     button.btn.btn-danger(type='submit') Resend My Code
+
+a.form-footer(href='http://www.howardmcqueen.com') Sent Daily from Taylor <i class="fa fa-envelope"></i>
+
+    // Include jQuery and Bootstrap scripts
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+    // Include page scripts
+    script(src='/js/main.js')
