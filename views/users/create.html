@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Include Font Awesome Icons-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- Twitter Bootstrap included for some basic styling-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- HTML 5 shims for older IE--><!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Page styles-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" media="screen" href="//www.authy.com/form.authy.min.css">
+  </head>
+  <body>
+    <!-- Bootstrap-powered nav bar-->
+    <nav class="navbar navbar-default navbar-fixed-top navy">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><i class="fa fa-bars"></i></button><a href="/" class="navbar-brand">Bitmail</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/users/new">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="main" class="container">
+      <!-- Display any error or informational messages-->
+      <div class="message-list">
+      </div>
+      <h1>Bitmail</h1>
+      <h2>Create a new account</h2>
+    
+      <form class="form" action="/users" method="POST">
+        <div class="form-group form-fieldset ui-input __first">
+          <label for="fullName">Username:</label>
+          <input type="text" name="fullName" tabindex="0" class="form-control">
+        </div>
+        <div class="form-group form-group form-fieldset ui-input __second">
+          <label for="email">Your E-Mail Address:</label>
+          <input type="email" name="email" tabindex="0" class="form-control">
+        </div>
+        <div class="form-group form-group form-fieldset ui-input __third">
+          <label for="password">Password:</label>
+          <input type="password" name="password" tabindex="0" class="form-control">
+        </div>
+        <div class="form-group form-group form-fieldset ui-input __fourth">
+          <label for="countryCode">Country Code:</label>
+          <select id="authy-countries" name="countryCode"></select>
+        </div>
+        <div class="form-group form-group form-fieldset ui-input __fifth">
+          <label for="phone">Mobile Phone:</label>
+          <input type="text" name="phone" class="form-control">
+        </div>
+        <div class="form-footer">
+        <button type="submit" class="btn btn-primary">Create Account</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Include jQuery and Bootstrap scripts-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- Include page scripts-->
+    <script src="/js/main.js"></script>
+    <!-- Include Authy form helpers and additional helper script-->
+    <script src="//www.authy.com/form.authy.min.js"></script>
+    <script src="/js/create_form.js"></script>
+  </body>
+</html>

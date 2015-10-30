@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Include Font Awesome Icons-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- Twitter Bootstrap included for some basic styling-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- HTML 5 shims for older IE--><!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Page styles-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/verify.css">
+  </head>
+  <body>
+    <!-- Bootstrap-powered nav bar-->
+    <nav class="navbar navbar-default navbar-fixed-top navy">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><i class="fa fa-bars"></i></button><a href="/" class="navbar-brand">Bitmail</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/users/new">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="main" class="container">
+      <!-- Display any error or informational messages-->
+      <div class="message-list">
+      </div>
+      <h1>Just To Be Safe...</h1>
+      <p>
+        Your account has been created, but we need to make sure you're a human
+        in control of the phone number you gave us. Can you please enter the 
+        verification code we just sent to your phone?
+        
+      </p>
+      <form action="/users/undefined/verify" method="POST">
+        <div class="form-group form form-fieldset ui-input">
+          <label for="code">Verification Code:</label>
+          <input type="text" name="code" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Verify Token</button>
+      </form>
+      <form action="/users/undefined/resend" method="POST">
+        <div class="form-group">
+          <button type="submit" class="btn btn-link">Resend My Code</button>
+        </div>
+      </form>
+    </div>
+    
+    <!-- Include jQuery and Bootstrap scripts-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- Include page scripts-->
+    <script src="/js/main.js"></script>
+  </body>
+</html>
