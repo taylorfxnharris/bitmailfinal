@@ -7,3 +7,52 @@
     <h1>HTTP Error 404: Page Not Found</h1>
 </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Include Font Awesome Icons-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- Twitter Bootstrap included for some basic styling-->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!-- HTML 5 shims for older IE-->
+    <!--if lt IE 9
+    script(src='//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+    script(src='//oss.maxcdn.com/respond/1.4.2/respond.min.js')
+    -->
+    <!-- Page styles-->
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div id="main" class="container">
+      <!-- Display any error or informational messages-->
+      <div class="message-list"></div>
+      <h2>Enter Verification Code</h2><br>
+    </div>
+  </body>
+
+<div class="middle">
+    <div class="fiddle">
+
+  <form action="/users/undefined/verify" method="POST">
+    <div class="form-group form form-fieldset ui-input">
+      <label for="code">Verification Code:</label>
+      <input type="text" name="code" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">Verify Token</button>
+  </form>
+</html>
+<form action="/users/undefined/resend" method="POST">
+  <div class="form-group form form-fieldset ui-input">
+    <button type="submit" class="btn btn-danger">Resend My Code</button>
+  </div>
+</form><a href="http://www.howardmcqueen.com" class="form-footer">Sent Daily from Taylor <i class="fa fa-envelope"></i>
+</a></div></div>
+  <!-- Include jQuery and Bootstrap scripts-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <!-- Include page scripts-->
+  <script src="/js/main.js"></script></a>

@@ -150,7 +150,7 @@ exports.verify = function(request, response) {
         }
 
         // Send confirmation text message
-        var message = 'You did it! Signup complete :)';
+        var message = 'Signup complete! Hire Taylor Harris :)';
         user.sendMessage(message, function(err) {
             if (err) {
                 request.flash('errors', 'You are signed up, but '

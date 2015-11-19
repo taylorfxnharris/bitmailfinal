@@ -23,7 +23,6 @@ html(lang='en')
 
   form(action='/users/'+id+'/verify', method='POST')
    .form-group.form.form-fieldset.ui-input
-     label(for='code') Verification Code:
      input.form-control(type='text', name='code')
 
    button.btn.btn-success(type='submit') Verify Token
@@ -32,7 +31,6 @@ html(lang='en')
    .form-group.form.form-fieldset.ui-input
      button.btn.btn-danger(type='submit') Resend My Code
 
-a.form-footer(href='http://www.howardmcqueen.com') Sent Daily from Taylor <i class="fa fa-envelope"></i>
 
     // Include jQuery and Bootstrap scripts
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')

@@ -288,8 +288,8 @@ h2 {
 .btn {
   border: 1;
   background-color: #50617A;
-  padding: 18px 30px 18px 30px;
-  font-size: 18px;
+  padding: -20px 30px 18px 30px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: .0875em;
   font-weight: 500;
